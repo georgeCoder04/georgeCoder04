@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-26T00:00:00.000Z",
+  "title": "Design System: Vice Desk",
+  "extensions": {
+    "colorMeta": {
+      "field-paper": { "role": "neutral", "displayName": "Field Paper", "canonical": "#f3f0e7", "tonalRamp": ["#312f2a", "#514e44", "#777267", "#a6a093", "#cfc9bd", "#e8e4da", "#f3f0e7", "#fbfaf6"] },
+      "dispatch-ink": { "role": "neutral", "displayName": "Dispatch Ink", "canonical": "#152522", "tonalRamp": ["#07100f", "#0c1715", "#152522", "#24403b", "#3d5a54", "#6d827c", "#a4b2ae", "#d7dfdc"] },
+      "atlas-green": { "role": "primary", "displayName": "Atlantic Dispatch Green", "canonical": "#173f3c", "tonalRamp": ["#071b1a", "#0c2927", "#173f3c", "#28514c", "#3d6e67", "#5e8a83", "#a1bdb7", "#dce9e6"] },
+      "signal-coral": { "role": "primary", "displayName": "Signal Coral", "canonical": "#eb6c54", "tonalRamp": ["#45140d", "#7e2619", "#b74335", "#eb6c54", "#f18a75", "#f4aa99", "#f7ccc0", "#fbece7"] },
+      "instrument-gold": { "role": "secondary", "displayName": "Instrument Gold", "canonical": "#d5a849", "tonalRamp": ["#3d2d0c", "#72541b", "#9d7422", "#d5a849", "#e0bb68", "#e9ce94", "#f0e1c0", "#faf4e5"] },
+      "cartographer-teal": { "role": "tertiary", "displayName": "Cartographer Teal", "canonical": "#4d9b90", "tonalRamp": ["#173b37", "#235e58", "#358078", "#4d9b90", "#6db0a6", "#96c7bf", "#c4dfdb", "#e8f2ef"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Field Record Display", "purpose": "Page and mission titles." },
+      "body": { "displayName": "Working Copy", "purpose": "Descriptions, status, and supporting instructions." },
+      "label": { "displayName": "Instrument Label", "purpose": "Navigation, metadata, filters, and actions." }
+    },
+    "shadows": [
+      { "name": "field-panel", "value": "0 2px 0 rgba(21,37,34,.06)", "purpose": "Quiet panel separation." },
+      { "name": "lifted-object", "value": "0 6px 20px rgba(28,47,42,.12)", "purpose": "Focused overlays and identity objects." },
+      { "name": "tactile-action", "value": "3px 3px 0 #eb6c54", "purpose": "Physical offset on primary controls." }
+    ],
+    "motion": [
+      { "name": "state-standard", "value": "180ms ease", "purpose": "Control hover, focus, and feedback changes." },
+      { "name": "panel-settle", "value": "280ms cubic-bezier(.2,.8,.2,1)", "purpose": "Map zoom and spatial state." }
+    ],
+    "breakpoints": [
+      { "name": "desktop-contract", "value": "1180px" },
+      { "name": "stack", "value": "860px" },
+      { "name": "narrow", "value": "560px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary dispatch and completion action.",
+      "html": "<button class=\"ds-btn-primary\">MARK MISSION COMPLETE</button>",
+      "css": ".ds-btn-primary{height:40px;padding:0 15px;border:1px solid #173f3c;border-radius:0;color:#fbfaf6;background:#173f3c;font:800 10px 'Arial Narrow',Arial,sans-serif;letter-spacing:.025em;text-transform:uppercase;box-shadow:3px 3px 0 #eb6c54;transition:180ms ease}.ds-btn-primary:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 #eb6c54}.ds-btn-primary:focus-visible{outline:3px solid #d5a849;outline-offset:3px}"
+    },
+    {
+      "name": "Search Field",
+      "kind": "input",
+      "refersTo": "button-secondary",
+      "description": "Collection and workspace search field.",
+      "html": "<label class=\"ds-search\"><svg viewBox=\"0 0 24 24\"><circle cx=\"11\" cy=\"11\" r=\"6\"/><path d=\"m16 16 5 5\"/></svg><input placeholder=\"Search the collection\" /></label>",
+      "css": ".ds-search{width:260px;height:38px;display:flex;align-items:center;gap:10px;padding:0 11px;border:1px solid #cdc8bb;background:#f3f0e7}.ds-search svg{width:16px;height:16px;fill:none;stroke:#63706b;stroke-width:1.7}.ds-search input{width:100%;border:0;outline:0;background:transparent;font:11px Arial,sans-serif;color:#152522}.ds-search:focus-within{outline:3px solid #d5a849;outline-offset:2px}"
+    },
+    {
+      "name": "Filter Group",
+      "kind": "chip",
+      "refersTo": "button-secondary",
+      "description": "Map and collection segmented filter.",
+      "html": "<div class=\"ds-filters\"><button>ALL</button><button class=\"active\">MISSIONS</button><button>JOBS</button></div>",
+      "css": ".ds-filters{display:inline-flex;padding:3px;border:1px solid #cdc8bb;background:#fbfaf6}.ds-filters button{height:28px;padding:0 12px;border:0;background:transparent;color:#63706b;font:800 9px 'Arial Narrow',Arial,sans-serif;text-transform:uppercase}.ds-filters .active{color:#fff;background:#173f3c}.ds-filters button:focus-visible{outline:3px solid #d5a849;outline-offset:2px}"
+    },
+    {
+      "name": "Field Record",
+      "kind": "card",
+      "refersTo": "button-secondary",
+      "description": "Collectible or planning record.",
+      "html": "<article class=\"ds-record\"><div>FIELD RECORD 08</div><h3>Coastal evidence</h3><p>Sable Marsh · Uncommon</p></article>",
+      "css": ".ds-record{width:260px;border:1px solid #cdc8bb;background:#fbfaf6;color:#152522;padding:18px}.ds-record div{color:#b74335;font:800 8px 'Arial Narrow',Arial,sans-serif;letter-spacing:.08em}.ds-record h3{margin:8px 0 4px;font:500 18px Georgia,serif}.ds-record p{margin:0;color:#63706b;font:10px Arial,sans-serif}"
+    },
+    {
+      "name": "Console Navigation",
+      "kind": "nav",
+      "refersTo": "button-primary",
+      "description": "Desktop utility rail item.",
+      "html": "<button class=\"ds-nav active\"><svg viewBox=\"0 0 24 24\"><path d=\"m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3V6Z\"/><path d=\"M9 3v15m6-12v15\"/></svg><span>MAP</span></button>",
+      "css": ".ds-nav{width:86px;min-height:68px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;border:0;color:#a9bbb4;background:#173f3c;font:800 10px 'Arial Narrow',Arial,sans-serif;text-transform:uppercase}.ds-nav.active{color:white;background:#28514c}.ds-nav svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7}.ds-nav:focus-visible{outline:3px solid #d5a849;outline-offset:-3px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Coastal Field Console",
+    "overview": "Vice Desk presents as a sunlit dispatch object: an atlas, mission brief, and field notebook held together by a disciplined interface. Warm paper, Atlantic green, and coral produce a coastal identity without relying on protected game assets or generic neon gaming language. Familiar controls, hard edges, and restrained depth let players act quickly.",
+    "keyCharacteristics": ["Original vector cartography is the primary visual and interaction surface.", "Warm paper fields support tactical data rather than replacing it with decoration.", "Coral marks action and current state; green anchors navigation and structure.", "Nearly every strong surface is rectangular, outlined, and instrument-like."],
+    "rules": [
+      { "name": "The Useful Signal Rule", "body": "Accent color must identify action, selection, or status; it is not a decorative glow or filler.", "section": "colors" },
+      { "name": "The No Costume Type Rule", "body": "Condensed type is used for data and controls, never as decorative technical copy at display scale.", "section": "typography" }
+    ],
+    "dos": ["Do make the map the dominant shared workspace on planning surfaces.", "Do label the experience unofficial, synthetic, and disconnected from a live game."],
+    "donts": ["Don't use protected logos, exact game assets, external artwork, or live-service claims.", "Don't add dark-neon glow, glass surfaces, or gradient text."]
+  }
+}
